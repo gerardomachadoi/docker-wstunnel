@@ -18,9 +18,9 @@ deb http://archive.canonical.com/ubuntu focal partner\n\
 #deb-src http://archive.canonical.com/ubuntu focal partner\n\
 " > /etc/apt/sources.list
 
-RUN apt-get update && apt-get dist-upgrade && apt-get -y autoremove
+RUN apt update
 
-RUN apt-get install -y bash netcat nginx supervisor
+RUN apt install bash netcat nginx supervisor -y
 
 ADD https://github.com/erebe/wstunnel/releases/download/v4.0/wstunnel-x64-linux /usr/local/bin/wstunnel
 RUN chmod +x /usr/local/bin/wstunnel
